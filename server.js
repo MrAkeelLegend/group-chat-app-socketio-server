@@ -7,6 +7,8 @@ const io = socket(server, {
   cors: {origin: "*"}
 });
 
+const port = process.env.PORT || 1337;
+
 let users = [];
 
 const messages = {
@@ -64,4 +66,4 @@ io.on('connection', socket => {
 
 });
 
-server.listen(1337, () => console.log('server runnirg on port 1337'))
+server.listen(port, () => console.log(`server runnirg on port ${port}`));
